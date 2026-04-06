@@ -379,6 +379,25 @@ button {
   </div>
 
   <script>
+const bgm = document.getElementById("bgm");
+
+// 🔥 點擊後才播放（解決瀏覽器限制）
+document.addEventListener("click", function () {
+  bgm.play();
+}, { once: true });
+
+// 播放 / 暫停
+function toggleMusic() {
+  if (bgm.paused) {
+    bgm.play();
+  } else {
+    bgm.pause();
+  }
+}
+
+
+
+
 function highlightSkills() {
   const section = document.getElementById('skills-section');
   section.classList.add('highlight');
