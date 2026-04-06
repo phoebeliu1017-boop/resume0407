@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>個人履歷表</title>
+
+  <style>
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --primary: #2f5aa8;
+  --text: #1f2937;
+  --subtext: #6b7280;
+  --line: #dbe3f0;
+  --tag: #eef4ff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
+  background: linear-gradient(180deg, #eef3fb 0%, #f8fafc 100%);
+  color: var(--text);
+}
+
+.container {
+  max-width: 980px;
+  margin: 40px auto;
+  background: var(--card);
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(31, 41, 55, 0.12);
+  overflow: hidden;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  padding: 36px;
+  background: linear-gradient(135deg, #f8fbff 0%, #edf4ff 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.photo {
+  width: 220px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 5px solid #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: 2.3rem;
+  color: var(--primary);
+}
+
+.contact {
+  margin-top: 15px;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+button {
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-light {
+  background: #fff;
+  color: var(--primary);
+  border: 1px solid var(--line);
+}
+
+.section {
+  padding: 20px 36px;
+}
+
+.tag {
+  display: inline-block;
+  margin: 5px;
+  padding: 6px 10px;
+  background: var(--tag);
+  border-radius: 999px;
+}
+  </style>
+</head>
+
+<body>
+
+<!-- 🎵 背景音樂 -->
+<audio id="bgm" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+  <div class="top">
+    <img src="images/IMG_7676.jpeg" class="photo">
+
+    <div class="intro">
+      <h1>phoebe liu</h1>
+      <p>學生 / 求職履歷</p>
+
+      <div class="contact">
+        姓名：劉易欣<br>
+        Email：phoebeliu1017@gmail.com
+      </div>
+
+      <div class="actions">
+        <button class="btn-primary" onclick="window.print()">列印</button>
+        <button class="btn-light" onclick="toggleMusic()">播放 / 暫停音樂</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>學歷</h2>
+    亞洲大學｜聽語系
+  </div>
+
+  <div class="section">
+    <h2>技能</h2>
+    <span class="tag">HTML</span>
+    <span class="tag">CSS</span>
+    <span class="tag">JavaScript</span>
+  </div>
+
+</div>
+
+<script>
+const bgm = document.getElementById("bgm");
+
+// 🔥 點擊後才播放（解決瀏覽器限制）
+document.addEventListener("click", function () {
+  bgm.play();
+}, { once: true });
+
+// 播放 / 暫停
+function toggleMusic() {
+  if (bgm.paused) {
+    bgm.play();
+  } else {
+    bgm.pause();
+  }
+}
+</script>
+
+</body>
+</html>
